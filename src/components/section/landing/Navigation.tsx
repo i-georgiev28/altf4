@@ -1,9 +1,9 @@
 "use client";
 
 import {
-  Navbar as NavbarComponent,
-  NavbarLeft,
-  NavbarRight,
+  NavBar as NavBarComponent,
+  NavBarLeft,
+  NavBarRight,
 } from "@/components/ui/nav/NavBar";
 import { NavButton as Button } from "@/components/ui/nav/NavButton";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/nav/Sheet";
@@ -20,15 +20,15 @@ function Navigation() {
     <header className="sticky top-0 z-50 -mb-4 px-4 pb-4">
       <div className="fade-bottom absolute left-0 h-24 w-full bg-background/15 backdrop-blur-lg"></div>
       <div className="relative mx-auto max-w-container">
-        <NavbarComponent>
-          <NavbarLeft>
+        <NavBarComponent>
+          <NavBarLeft>
             <a href="/" className="flex items-center gap-2 text-xl font-bold">
               <Logo />
               Launch UI
             </a>
             <MenuBar />
-          </NavbarLeft>
-          <NavbarRight>
+          </NavBarLeft>
+          <NavBarRight>
             <a href="/" className="hidden text-sm md:block">
               Sign in
             </a>
@@ -59,8 +59,8 @@ function Navigation() {
                 </nav>
               </SheetContent>
             </Sheet>
-          </NavbarRight>
-        </NavbarComponent>
+          </NavBarRight>
+        </NavBarComponent>
       </div>
     </header>
   );
