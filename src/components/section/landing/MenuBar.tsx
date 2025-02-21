@@ -18,39 +18,39 @@ import Logo from "@/assets/logo/default";
 
 const components: { title: string; href: string; description: string }[] = [
     {
-      title: "Alert Dialog",
+      title: "Residential Monitoring",
       href: "/docs/primitives/alert-dialog",
       description:
-        "A modal dialog that interrupts the user with important content and expects a response.",
+        "Tailored solar tracking solutions designed for individual households.",
     },
     {
-      title: "Hover Card",
+      title: "Commercial Rooftop Systems",
       href: "/docs/primitives/hover-card",
       description:
-        "For sighted users to preview content available behind a link.",
+        "Optimized monitoring for business rooftop installations.",
     },
     {
-      title: "Progress",
+      title: "Corporate Solar Farms",
       href: "/docs/primitives/progress",
       description:
-        "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+        "Scalable solutions to efficiently manage large-scale solar farms.",
     },
     {
-      title: "Scroll-area",
+      title: "Industrial Installations",
       href: "/docs/primitives/scroll-area",
-      description: "Visually or semantically separates content.",
+      description: "Robust systems built for industrial solar energy setups",
     },
     {
-      title: "Tabs",
+      title: "Off-Grid Solutions",
       href: "/docs/primitives/tabs",
       description:
-        "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+        "Innovative monitoring for remote and off-grid solar applications.",
     },
     {
-      title: "Tooltip",
+      title: "Community Solar Projects",
       href: "/docs/primitives/tooltip",
       description:
-        "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+        "Empowering communities with shared solar energy management.",
     },
   ];
   
@@ -59,7 +59,7 @@ function MenuBar() {
       <NavigationMenu className="hidden md:flex">
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+            <NavigationMenuTrigger>Features</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 <li className="row-span-3">
@@ -70,29 +70,28 @@ function MenuBar() {
                     >
                       <Logo />
                       <div className="mb-2 mt-4 text-lg font-medium">
-                        Launch UI
+                        SolarEye
                       </div>
                       <p className="text-sm leading-tight text-muted-foreground">
-                        Landing page template built with React, Shadcn/ui and
-                        Tailwind that you can copy/paste into your project.
+                      Empowering your solar journey with real-time insights and seamless energy optimization. We remove the hastle from saving.
                       </p>
                     </a>
                   </NavigationMenuLink>
                 </li>
-                <ListItem href="/" title="Introduction">
-                  Re-usable components built using Radix UI and Tailwind CSS.
+                <ListItem href="/" title="Real-Time Dashboard">
+                  View live performance metrics of your solar panels at a glance.
                 </ListItem>
-                <ListItem href="/" title="Installation">
-                  How to install dependencies and structure your app.
+                <ListItem href="/" title="Advanced Analytics">
+                  Dive into historical data with interactive charts and detailed insights.
                 </ListItem>
-                <ListItem href="/" title="Typography">
-                  Styles for headings, paragraphs, lists...etc
+                <ListItem href="/" title="User Management">
+                  Easily control access and customize user settings across the system.
                 </ListItem>
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+            <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 {components.map((component) => (
@@ -110,7 +109,14 @@ function MenuBar() {
           <NavigationMenuItem>
             <Link to="/">
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Documentation
+                About
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link to="/">
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Contact
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>

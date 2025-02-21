@@ -33,7 +33,7 @@ function Navigation() {
               Sign in
             </a>
             <Button variant="default" asChild>
-              <a href="/">Get Started</a>
+              <a href="SingUp">Get Started</a>
             </Button>
             <Sheet>
               <SheetTrigger asChild>
