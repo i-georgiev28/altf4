@@ -23,7 +23,7 @@ import {NavButton as Button} from "@/components/ui/nav/NavButton";
 import {Sheet, SheetTrigger, SheetContent} from '@/components/ui/nav/Sheet';
 
 import { Menu } from "lucide-react";
-import {LaunchUI as ReactSvg} from "@/assets/logos/launch-ui";
+import Logo from "@/assets/logo/default";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -77,7 +77,7 @@ function NavBar() {
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/30 to-muted/10 p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    <ReactSvg />
+                    <Logo />
                     <div className="mb-2 mt-4 text-lg font-medium">
                       Launch UI
                     </div>
@@ -166,7 +166,7 @@ function Navigation() {
               href="/"
               className="flex items-center gap-2 text-xl font-bold"
             >
-              <ReactSvg />
+              <Logo />
               Launch UI
             </a>
             <NavBar />

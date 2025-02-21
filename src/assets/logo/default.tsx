@@ -1,4 +1,4 @@
-const LaunchUI = (props: React.SVGProps<SVGSVGElement>) => (
+const Logo = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     width={24}
     height={24}
@@ -16,4 +16,4 @@ const LaunchUI = (props: React.SVGProps<SVGSVGElement>) => (
     <path d="M11.25 21V19.5L15 15.75V17.25L11.25 21Z" fill="currentColor" />
   </svg>
 );
-export {LaunchUI};
+export default Logo;
