@@ -2,8 +2,8 @@
 // import ReactSVG from "@/assets/react.svg";
 // import { Badge } from "@/components/ui/badge";
 
-import { Hero } from '@/components/section/Hero';
-import { Navigation } from '@/components/section/Navigation';
+import { Hero } from '@/components/section/landing/Hero';
+import { Navigation } from '@/components/section/landing/Navigation';
 
 function Landing() {
   return (

@@ -11,7 +11,7 @@ import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/nav/Sheet";
 import { Menu } from "lucide-react";
 import Logo from "@/assets/logo/default";
 
-import {MenuBar} from '@/components/section/MenuBar';
+import {MenuBar} from '@/components/section/landing/MenuBar';
 
 
 
