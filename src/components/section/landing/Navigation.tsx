@@ -29,11 +29,11 @@ function Navigation() {
             <MenuBar />
           </NavbarLeft>
           <NavbarRight>
-            <a href="/" className="hidden text-sm md:block">
+            <a href="LogIn.tsx" className="hidden text-sm md:block">
               Sign in
             </a>
             <Button variant="default" asChild>
-              <a href="/">Get Started</a>
+              <a href="SingUp">Get Started</a>
             </Button>
             <Sheet>
               <SheetTrigger asChild>
