@@ -11,7 +11,7 @@ import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/nav/Sheet";
 import { Menu } from "lucide-react";
 import Logo from "@/assets/logo/default";
 
-import {MenuBar} from '@/components/section/MenuBar';
+import {MenuBar} from '@/components/section/landing/MenuBar';
 
 
 
@@ -29,11 +29,11 @@ function Navigation() {
             <MenuBar />
           </NavbarLeft>
           <NavbarRight>
-            <a href="/" className="hidden text-sm md:block">
+            <a href="LogIn.tsx" className="hidden text-sm md:block">
               Sign in
             </a>
             <Button variant="default" asChild>
-              <a href="/">Get Started</a>
+              <a href="SingUp">Get Started</a>
             </Button>
             <Sheet>
               <SheetTrigger asChild>
