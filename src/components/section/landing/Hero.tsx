@@ -4,6 +4,9 @@ import { MoveRight, PhoneCall } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
 
+import SignUp from "@/components/section/landing/SignUp";
+import { Sign } from "crypto";
+
 function Hero() {
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(
@@ -71,9 +74,11 @@ function Hero() {
             <Button size="lg" className="gap-4" variant="outline">
               Jump on a call <PhoneCall className="w-4 h-4" />
             </Button>
+            <SignUp>
             <Button size="lg" className="gap-4">
               Sign up here <MoveRight className="w-4 h-4" />
             </Button>
+            </SignUp>
           </div>
         </div>
       </div>
