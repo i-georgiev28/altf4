@@ -7,7 +7,7 @@ import { BackgroundAnimation } from "@/components/ui/Background-Animation";
 
 function Hero() {
     const [titleNumber, setTitleNumber] = useState(0);
-    const titles = useMemo(() => ["easy", "fast", "efficient", "effortless", "mazna"], []);
+    const titles = useMemo(() => ["easy", "fast", "efficient", "effortless",], []);
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
