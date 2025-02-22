@@ -138,11 +138,11 @@ const SignUp = ({children, ...props}: AuthDialogProps)  => {
 
     const handleSubmit = async (event: FormEvent) => {
       event.preventDefault();
-
+      
       try {
         const response = await axios.post('http://localhost:8080/api/auth/login', {
           email,
-          password,
+          password
         });
   
         // Assuming the JWT token is in the response data
