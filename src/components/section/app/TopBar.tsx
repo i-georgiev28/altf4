@@ -3,7 +3,7 @@ import {
   NavBarLeft,
   NavBarRight,
 } from "@/components/ui/nav/NavBar";
-import { Button } from "@/components/ui/ButtonOld";
+import { Button } from "@/components/ui/Button";
 import { Separator } from "@/components/ui/Seperator";
 import { ChevronLeft, ChevronRight, HomeIcon, ComponentIcon, Ellipsis } from "lucide-react";
 import {
