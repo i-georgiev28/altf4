@@ -19,21 +19,21 @@ interface FeatureStepsProps {
 const features = [
   { 
     step: 'Step 1', 
-    title: 'Learn the Basics',
-    content: 'Start your Web3 journey by learning the basics of blockchain.', 
-    image: 'https://images.unsplash.com/photo-1723958929247-ef054b525153?q=80&w=2070&auto=format&fit=crop' 
+    title: 'We take the hastle away',
+    content: 'We make it easy for you to save money and help the planet.', 
+    image: 'https://www.shutterstock.com/image-photo/happy-businessman-standing-crossed-arms-600nw-2104252673.jpg' 
   },
   { 
     step: 'Step 2',
-    title: 'Deep Dive',
-    content: 'Dive deep into blockchain fundamentals and smart contract development.',
-    image: 'https://images.unsplash.com/photo-1723931464622-b7df7c71e380?q=80&w=2070&auto=format&fit=crop'
+    title: 'Eco Power',
+    content: 'We truly belive that the future in electricy is in the solar panels.',
+    image: 'https://www.sepco-solarlighting.com/hubfs/Blog_Pics/photovoltaic-system-2742302_1280.jpg'
   },
   { 
     step: 'Step 3',
-    title: 'Build Projects',
-    content: 'Graduate with hands-on Web3 experience through building decentralized applications.',
-    image: 'https://images.unsplash.com/photo-1725961476494-efa87ae3106a?q=80&w=2070&auto=format&fit=crop'
+    title: 'Why to chose us?',
+    content: 'We offer frendly interface that everyone can use for free just with an account',
+    image: 'https://img.freepik.com/free-vector/flat-design-business-planning-concept_23-2149151729.jpg?semt=ais_hybrid'
   },
 ]
 
