@@ -62,10 +62,9 @@ class UsersService {
     }
 
     private async prepareUserPayload(payloadRaw: UserUpdatePayload, lang = 'en') {
+        const email = (payloadRaw.email as string)?.toLocaleLowerCase(lang);
+        
         const username = (payloadRaw.username as string)?.toLocaleLowerCase(lang);
-
-        const email = payloadRaw.email;
-
 
         const password = payloadRaw.password;
         const hashedPassword = password ? await argon2.hash(password) : undefined;

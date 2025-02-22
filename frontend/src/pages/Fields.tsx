@@ -1,11 +1,11 @@
 import { Navigation } from "@/components/navigation";
 
-function Profile() {
+function Fields() {
     return (
         <>
-            <h1>Profile</h1>
+            <h1>Fields</h1>
         </>
     );
 }
 
-export {Profile};
+export {Fields};

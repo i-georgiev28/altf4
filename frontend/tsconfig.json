@@ -1,16 +1,13 @@
 {
-  "compilerOptions": {
-    "forceConsistentCasingInFileNames": false,
-    "composite": true,
-    /* Paths (for shadcn/ui since paths in tsconfig.app.json are not working) */
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
 }

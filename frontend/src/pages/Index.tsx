@@ -1,11 +1,11 @@
 import { Navigation } from "@/components/navigation";
 
-function Profile() {
+function Index() {
     return (
         <>
-            <h1>Profile</h1>
+            <Navigation />
         </>
     );
 }
 
-export {Profile};
+export {Index};

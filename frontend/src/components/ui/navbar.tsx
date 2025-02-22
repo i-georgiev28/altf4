@@ -1,18 +1,18 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-const NavBar = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement>>(
+const Navbar = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement>>(
   ({ className, ...props }, ref) => (
     <nav
-      className={cn("flex items-center justify-between py-2", className)}
+      className={cn("flex items-center justify-between py-4", className)}
       {...props}
       ref={ref}
     />
   )
 );
-NavBar.displayName = "Navbar";
+Navbar.displayName = "Navbar";
 
-const NavBarLeft = React.forwardRef<
+const NavbarLeft = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -22,9 +22,9 @@ const NavBarLeft = React.forwardRef<
     ref={ref}
   />
 ));
-NavBarLeft.displayName = "NavbarLeft";
+NavbarLeft.displayName = "NavbarLeft";
 
-const NavBarRight = React.forwardRef<
+const NavbarRight = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -34,9 +34,9 @@ const NavBarRight = React.forwardRef<
     ref={ref}
   />
 ));
-NavBarRight.displayName = "NavbarRight";
+NavbarRight.displayName = "NavbarRight";
 
-const NavBarCenter = React.forwardRef<
+const NavbarCenter = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -46,6 +46,6 @@ const NavBarCenter = React.forwardRef<
     ref={ref}
   />
 ));
-NavBarCenter.displayName = "NavbarCenter";
+NavbarCenter.displayName = "NavbarCenter";
 
-export { NavBar, NavBarLeft, NavBarRight, NavBarCenter};
+export { Navbar, NavbarLeft, NavbarRight, NavbarCenter };

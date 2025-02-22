@@ -7,8 +7,8 @@ import { RefreshTokenDb, RtPayload } from './types';
 import { returningUserFields, User, UserDb } from '../users';
 
 
-export const JWT_SECRET_AT = process.env.JWT_SECRET_AT!;
-export const JWT_SECRET_RT = process.env.JWT_SECRET_RT!;
+export const JWT_SECRET_AT = "SECRET1";
+export const JWT_SECRET_RT = "SECRET2";
 
 const allTokenSettings = {
     accessToken: {
@@ -23,8 +23,8 @@ const allTokenSettings = {
 
 class AuthService {
 
-    async findUserFromCredentials(username: string, password: string): Promise<User> {
-        const userRaw: UserDb | undefined = await Users().where({ username }).select<UserDb>([...returningUserFields, 'hashedPassword']).first();
+    async findUserFromCredentials(email: string, password: string): Promise<User> {
+        const userRaw: UserDb | undefined = await Users().where({ email }).select<UserDb>([...returningUserFields, 'hashedPassword']).first();
 
         if (!userRaw) {
             throw new NotFoundException('User not found');

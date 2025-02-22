@@ -18,16 +18,16 @@ const optsForRt: JwtStrategyOptions = {
 
 
 passport.use('local', new LocalStrategy(
-    { passReqToCallback: true, session: false }, async function(req, usernameRaw, password, done) {
+    { passReqToCallback: true, session: false }, async function(req, emailRaw, password, done) {
         const lang = req.acceptsLanguages()[0].replace('*', '') || 'en';
-        const username = req.body.username.toLocaleLowerCase(lang);
+        const email = req.body.email.toLocaleLowerCase(lang);
 
         try {
-            const user = await AuthService.findUserFromCredentials(username, password);
+            const user = await AuthService.findUserFromCredentials(email, password);
 
             return done(null, user);
         } catch (e) {
-            return done(null, false, { message: 'Incorrect username or password' });
+            return done(null, false, { message: 'Incorrect email or password' });
         }
     },
 ));

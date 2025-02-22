@@ -11,13 +11,13 @@ export class AuthController {
         // We need to remove the "*" character from the language string if exists (happens when user accepts all languages)
         const lang = req.acceptsLanguages()[0].replace('*', '') || 'en';
 
-        const username = req.body.username.toLocaleLowerCase(lang);
+        const email = req.body.email.toLocaleLowerCase(lang);
 
-        // Check if the username is already taken
-        const existingUser = await Users().where('username', username).first();
+        // Check if the email is already taken
+        const existingUser = await Users().where('email', email).first();
 
         if (existingUser) {
-            throw new BadRequestException('Username already taken');
+            throw new BadRequestException('Email already taken');
         }
 
         const user = await UsersService.store(req.body, lang);

@@ -15,7 +15,7 @@ export const userRegistrationRequestSchema = z.strictObject({
 
 export const userLoginRequestSchema = z.strictObject({
     body: z.strictObject({
-        username: usernameValidation,
+        email: emailValidation,
         password: passwordValidation,
     }),
 });

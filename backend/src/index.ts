@@ -11,7 +11,7 @@ import * as process from 'process';
 
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 8080;
 
 app.use(express.json() as any);
 app.use(cors()); // You may want to restrict this to only the domains you trust in a production app
