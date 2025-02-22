@@ -5,7 +5,6 @@ import { MoveRight, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 import SignUp from "@/components/section/landing/SignUp";
-import { Sign } from "crypto";
 
 function Hero() {
   const [titleNumber, setTitleNumber] = useState(0);
