@@ -14,7 +14,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/nav/NavigationMenu";
 
-import Logo from "@/assets/logo/default";
+import Logo from "@/assets/Logo";
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -94,9 +94,9 @@ function MenuBar() {
             <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                {components.map((component) => (
+                {components.map((component, idx) => (
                   <ListItem
-                    key={component.title}
+                    key={idx}
                     title={component.title}
                     href="/"
                   >

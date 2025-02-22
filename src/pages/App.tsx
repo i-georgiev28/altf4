@@ -17,19 +17,9 @@ function App() {
   return (
     <div className="h-screen flex flex-col md:flex-row w-full flex-1 mx-auto overflow-hidden">
       <SideBar isOpen={isSideBarOpen} setOpen={setSideBarOpen} />
-      <Dashboard />
-    </div>
-  );
-}
-
-export default App;
-
-const Dashboard = () => {
-  return (
-    <>
-    <div className="flex flex-1">
+      <div className="flex flex-1">
       <div className="px-2 pb-6 md:px-10 rounded-tl-2xl flex flex-col gap-2 flex-1 w-full h-full">
-      <TopBar />
+      <TopBar isOpen={isSideBarOpen} setOpen={setSideBarOpen} />
         <div className="flex gap-2">
           {[...new Array(4)].map((i) => (
             <div
@@ -48,6 +38,16 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
+    </div>
+  );
+}
+
+export default App;
+
+const Dashboard = () => {
+  return (
+    <>
+
     </>
   );
 };

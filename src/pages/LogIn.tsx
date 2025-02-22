@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/ButtonOld";
+import { Button } from "@/components/ui/Button";
 import {
   Dialog,
   DialogContent,
@@ -7,9 +7,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/Dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import * as LabelPrimitive from "@radix-ui/react-label"
+import { cva, type VariantProps } from "class-variance-authority"
+import React from "react";
 import { useId } from "react";
+
+import { cn } from "@/lib/utils"
 
 function LogIn() {
   const id = useId();

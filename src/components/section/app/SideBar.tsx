@@ -1,7 +1,7 @@
 import { Layers, CircleGauge, LayoutPanelTop, Settings } from "lucide-react";
 import { Sidebar as SideBarComponent, SidebarBody, SidebarLink } from "@/components/ui/SideBar";
 
-import Logo from "@/assets/logo/default";
+import Logo from "@/assets/Logo";
 
 import React, { Dispatch, SetStateAction } from 'react';
 
@@ -15,7 +15,10 @@ const SideBar: React.FC<SideBarProps> = ({ isOpen, setOpen }) => {
         <SideBarComponent open={isOpen} setOpen={setOpen}>
         <SidebarBody className="ml-10 bg-gray-100 justify-between gap-10">
           <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-            {open ? <h1>Logo</h1> : <Logo />}
+            <div className="flex flex-row">
+              <Logo className="w-7 h-7 block"/>
+              {isOpen ? <h1 className="inline">Logo</h1> : <></>}
+            </div>
             <div className="mt-8 flex flex-col gap-2">
               {links.map((link, idx) => (
                 <SidebarLink key={idx} link={link} />
@@ -49,28 +52,28 @@ const links = [
       label: "Dashboard",
       href: "#",
       icon: (
-        <Layers className="text-neutral-700 h-5 w-5 flex-shrink-0" />
+        <Layers className="text-neutral-700 h-6 w-6 flex-shrink-0" />
       ),
     },
     {
       label: "History",
       href: "#",
       icon: (
-        <CircleGauge className="text-neutral-700  h-5 w-5 flex-shrink-0" />
+        <CircleGauge className="text-neutral-700 h-6 w-6 flex-shrink-0" />
       ),
     },
     {
       label: "Analytics",
       href: "#",
       icon: (
-        <LayoutPanelTop className="text-neutral-700 h-5 w-5 flex-shrink-0" />
+        <LayoutPanelTop className="text-neutral-700 h-6 w-6 flex-shrink-0" />
       ),
     },
     {
       label: "Settings",
       href: "#",
       icon: (
-        <Settings className="text-neutral-700 h-5 w-5 flex-shrink-0" />
+        <Settings className="text-neutral-700 h-6 w-6 flex-shrink-0" />
       ),
     },
   ];

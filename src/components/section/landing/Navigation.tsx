@@ -9,7 +9,7 @@ import { NavButton as Button } from "@/components/ui/nav/NavButton";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/nav/Sheet";
 
 import { Menu } from "lucide-react";
-import Logo from "@/assets/logo/default";
+import Logo from "@/assets/Logo";
 
 import {MenuBar} from '@/components/section/landing/MenuBar';
 
