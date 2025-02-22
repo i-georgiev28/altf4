@@ -29,7 +29,7 @@ function Navigation() {
             <MenuBar />
           </NavBarLeft>
           <NavBarRight>
-            <a href="/" className="hidden text-sm md:block">
+            <a href="pages/LogIn.tsx" className="hidden text-sm md:block">
               Sign in
             </a>
             <Button variant="default" asChild>
