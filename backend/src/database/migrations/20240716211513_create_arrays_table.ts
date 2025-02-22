@@ -7,7 +7,10 @@ export async function up(knex: Knex): Promise<void> {
         table.integer('userId').notNullable().references('id').inTable('users').onDelete('CASCADE').onUpdate('CASCADE');
         table.string('name').notNullable();
         table.text('location').notNullable();
-        table.integer('output').notNullable();
+        table.float('latitude').notNullable();
+        table.float('longitude').notNullable();
+        table.integer('width').notNullable();
+        table.integer('height').notNullable();
         table.integer('capacity').notNullable();
         table.text('data').notNullable();
     });

@@ -1,7 +1,7 @@
 import * as z from 'zod';
 
-const name = z.string().min(2).max(32);
-const location = z.string().min(5).max(128);
+const name = z.string().min(1).max(32);
+const location = z.string().min(0).max(128);
 const latitude = z.number();
 const longitude = z.number();
 const width = z.number();

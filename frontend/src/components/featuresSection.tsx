@@ -1,7 +1,7 @@
 // import { cn } from "@/lib/utils";
 // import React from "react";
 import Logo from "@/assets/logo";
-import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import { BentoGrid, BentoGridItem } from "@/components/ui/bentogrid";
 import { image } from "@heroui/react";
 import { ImageIcon } from "lucide-react";
 

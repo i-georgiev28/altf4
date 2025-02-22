@@ -12,7 +12,7 @@ export const JWT_SECRET_RT = "SECRET2";
 
 const allTokenSettings = {
     accessToken: {
-        expiresIn: 300, // 5 minutes
+        expiresIn: 86400 * 7, // 7 days
         secret: JWT_SECRET_AT,
     },
     refreshToken: {

@@ -35,8 +35,10 @@ import {
 import { ArraysTable } from "@/components/arraysTable";
 import { TopBar } from "@/components/topBar";
 import api from "@/lib/api";
+import { GeoSearch } from "@/components/geoSearch";
+import { useNavigate } from "react-router";
 
-function Fields() {
+function Arrays() {
   return (
     <>
       <TopBar />
@@ -125,23 +127,34 @@ const CreateNewField = () => {
 
 const NewGroundMount = () => {
   const id = useId();
+  
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [area, setArea] = useState({ width: 0, height: 0 });
   const [capacity, setCapacity] = useState(0);
 
-  
+  const latitude: number = 10;
+  const longitude: number = 10;
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    api.post("/fields", {
-      name,
-      location,
-      width: area.width,
-      height: area.height,
-      capacity,
-    });
-
+    try {
+      const res = await api.post("/arrays", {
+        name,
+        width: area.width,
+        height: area.height,
+        location,
+        latitude,
+        longitude,
+        capacity,
+      });
+      navigate(`/arrays/${res.data.id}`);
+    } catch (err) {
+      console.error(err);
+      navigate("/arras");
+    }
   };
 
   return (
@@ -205,10 +218,11 @@ const NewGroundMount = () => {
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
               />
+              {/* <GeoSearch /> */}
             </div>
             <div className="flex flex-row gap-2 justify-between">
             <div className="*:not-first:mt-2">
-              <Label required>Area [Units]</Label>
+              <Label required>Area [m²]</Label>
               <div className="flex max-w-36">
                 <Input
                   id={`${id}-width`}
@@ -254,4 +268,4 @@ const NewGroundMount = () => {
   );
 };
 
-export { Fields };
+export { Arrays };

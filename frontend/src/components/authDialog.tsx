@@ -52,7 +52,7 @@ const SignUp = ({children, ...props}: AuthDialogProps)  => {
         setToken(accessToken);
         
         // You can navigate to another page if needed, e.g., dashboard
-        navigate('/fields');
+        navigate('/arrays');
       } catch (error) {
         console.error('Login failed:', error);
         navigate('/', { replace: true});

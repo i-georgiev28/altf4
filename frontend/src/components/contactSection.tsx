@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { AnimatePresence } from "framer-motion";
-import { Notification } from "@/components/ui/Notification";
+import { Notification } from "@/components/ui/notification";
 
 const Contact = () => {
   const [showNotification, setShowNotification] = useState(false);

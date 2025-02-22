@@ -58,7 +58,7 @@ function Navigation() {
             ) : (
               <>
               <Button variant="outline" onClick={handleClick}>logout</Button>
-              <a href="/fields">
+              <a href="/arrays">
                 <Button variant="default">Dashboard</Button>
               </a>
               </>

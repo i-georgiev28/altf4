@@ -23,9 +23,9 @@ export class ArraysController {
     }
 
     static async store(req: Request, res: Response, next: NextFunction) {
-        const payload = req.body;
+        const payload = { data: "", ...req.body };
         const userId = req.user!.id;
-
+        
         const array = await ArraysService.store({ ...payload, userId });
 
         res.json(array);

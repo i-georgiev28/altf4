@@ -1,11 +1,11 @@
 import { Navigation } from "@/components/navigation";
 
-function Field() {
+function Array() {
     return (
         <>
-            <h1>Field</h1>
+            <h1>Array</h1>
         </>
     );
 }
 
-export {Field};
+export {Array};
