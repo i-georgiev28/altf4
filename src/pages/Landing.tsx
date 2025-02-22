@@ -4,6 +4,8 @@
 
 import { Hero } from '@/components/section/landing/Hero';
 import { Navigation } from '@/components/section/landing/Navigation';
+import {Contact} from '@/components/section/landing/Contact';
+
 
 import {Footer} from '@/components/section/landing/Footer';
 function Landing() {
@@ -11,6 +13,7 @@ function Landing() {
     <>
     <Navigation />
     <Hero />
+    <Contact />
     <Footer />
     </>
   );
