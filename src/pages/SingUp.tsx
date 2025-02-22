@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/ButtonOld";
 import {
   Dialog,
   DialogContent,
@@ -6,7 +6,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/ui/Dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useId } from "react";
@@ -25,7 +25,7 @@ function Component() {
             aria-hidden="true"
           >
             <svg
-              className="stroke-zinc-800 dark:stroke-zinc-100"
+              className="stroke-zinc-800"
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
