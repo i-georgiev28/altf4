@@ -1,6 +1,9 @@
 // import { cn } from "@/lib/utils";
 // import React from "react";
+import Logo from "@/assets/logo";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import { image } from "@heroui/react";
+import { ImageIcon } from "lucide-react";
 
 export function Features() {
   return (
@@ -22,27 +25,26 @@ const Skeleton = () => (
 );
 const items = [
   {
-    title: "The Dawn of Innovation",
-    description: "Explore the birth of groundbreaking ideas and inventions.",
-    header: <Skeleton />,
+    title: "Real time dashbord",
+    description: "With aur app you can monitir all of yor solar panels and track their specs.",
+    header: <img src="/public/section1 (2).webp" />,
     className: "md:col-span-2",
   },
   {
-    title: "The Digital Revolution",
-    description: "Dive into the transformative power of technology.",
+    title: "SolarEye",
+    description: "We live in the future, let the future live with you!",
+    header: <Logo />,
+    className: "md:col-span-1",
+  },
+  {
+    title: "Advanced analytics",
+    description: "With aur thnology you can chek easy for bugs or underwatig in the system.",
     header: <Skeleton />,
     className: "md:col-span-1",
   },
   {
-    title: "The Art of Design",
-    description: "Discover the beauty of thoughtful and functional design.",
-    header: <Skeleton />,
-    className: "md:col-span-1",
-  },
-  {
-    title: "The Power of Communication",
-    description:
-      "Understand the impact of effective communication in our lives.",
+    title: "User manigment",
+    description: "You can make your oun filds with solar panels directly with aur software.",
     header: <Skeleton />,
     className: "md:col-span-2",
   },

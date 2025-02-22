@@ -38,7 +38,7 @@ function Navigation() {
           <NavbarLeft>
             <a href="/" className="flex items-center gap-2 text-xl font-bold">
               <Logo className="w-8 h-8" />
-              SunSight
+              SolarEye
             </a>
             <MenuBar />
           </NavbarLeft>
