@@ -25,7 +25,7 @@ class AuthService {
 
     async findUserFromCredentials(email: string, password: string): Promise<User> {
         const userRaw: UserDb | undefined = await Users().where({ email }).select<UserDb>([...returningUserFields, 'hashedPassword']).first();
-
+        
         if (!userRaw) {
             throw new NotFoundException('User not found');
         }
@@ -87,7 +87,7 @@ class AuthService {
         return argon2.verify(hashedPassword, password);
     }
 
-    private async generateAuthToken(user: User, type: 'accessToken' | 'refreshToken', iat: Date, oldRtPayload?: RtPayload) {
+    private async   generateAuthToken(user: User, type: 'accessToken' | 'refreshToken', iat: Date, oldRtPayload?: RtPayload) {
         let jti: number | undefined;
 
         const iatDate = new Date(iat);
