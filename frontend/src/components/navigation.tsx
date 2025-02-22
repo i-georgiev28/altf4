@@ -53,8 +53,9 @@ function Navigation() {
             </SignUp>
               </>
             ) : (
-              <Button variant="default">Dashboard</Button>
-
+              <a href="/fields">
+                <Button variant="default">Dashboard</Button>
+              </a>
             )}
             <Sheet>
               <SheetTrigger asChild>
