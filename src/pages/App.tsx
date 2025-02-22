@@ -1,55 +1,110 @@
-"use client";
 import { TopBar } from "@/components/section/app/TopBar";
-import { SideBar } from "@/components/section/app/SideBar";
-import { useState } from "react";
+import Fields  from "@/components/section/app/Fields";
+import { Badge }  from "@/components/ui/Badge";
+
+import React from "react";
+import { Image as ImageIcon, Paintbrush, Plus, X } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+
+import {
+  FloatingPanelBody,
+  FloatingPanelButton,
+  FloatingPanelCloseButton,
+  FloatingPanelContent,
+  FloatingPanelFooter,
+  FloatingPanelForm,
+  FloatingPanelHeader,
+  FloatingPanelLabel,
+  FloatingPanelRoot,
+  FloatingPanelSubmitButton,
+  FloatingPanelTextarea,
+  FloatingPanelTrigger,
+} from "@/components/ui/FloatingPanel";
+
 
 function App() {
-  const [isSideBarOpen, setSideBarOpen] = useState(false);
-  // return (
-  //   <>
-  //     <TopBar />
-  //     Sideb
-  //     <main className="flex flex-col items-center justify-center h-screen">
-
-  //     </main>
-  //   </>
-  // );
   return (
-    <div className="h-screen flex flex-col md:flex-row w-full flex-1 mx-auto overflow-hidden">
-      <SideBar isOpen={isSideBarOpen} setOpen={setSideBarOpen} />
-      <div className="flex flex-1">
-      <div className="px-2 pb-6 md:px-10 rounded-tl-2xl flex flex-col gap-2 flex-1 w-full h-full">
-      <TopBar isOpen={isSideBarOpen} setOpen={setSideBarOpen} />
-        <div className="flex gap-2">
-          {[...new Array(4)].map((i) => (
-            <div
-              key={"first-array" + i}
-              className="h-20 w-full rounded-lg  bg-gray-100 animate-pulse"
-            ></div>
-          ))}
-        </div>
-        <div className="flex gap-2 flex-1">
-          {[...new Array(2)].map((i) => (
-            <div
-              key={"second-array" + i}
-              className="h-full w-full rounded-lg  bg-gray-100 animate-pulse"
-            ></div>
-          ))}
-        </div>
-      </div>
-    </div>
-    </div>
+    <>
+      <TopBar />
+      <main className="flex flex-col my-auto mx-auto px-4 justify-center h-screen max-w-5xl">
+        <CreateNewField/>
+        <Fields />
+      </main>
+    </>
   );
 }
 
-export default App;
 
-const Dashboard = () => {
+const CreateNewField = () => {
+  const actions = [
+    {
+      icon: <Plus className="w-4 h-4" />,
+      label: <span>Ground Mount</span>,
+      action: () => console.log("New File"),
+      disabled: false,
+    },
+    {
+      icon: <Plus className="w-4 h-4" />,
+      label: <span className="items-center text-center justify-center justify-items-center line-through">Rooftop
+              <Badge variant="outline" className="mx-2 no-underline">
+                <span className="size-1.5 rounded-full bg-amber-500" aria-hidden="true"></span>
+                WIP
+              </Badge>
+            </span>,
+      action: () => console.log("WIP"),
+      disabled: true,
+    },
+    {
+      icon: <Plus className="w-4 h-4" />,
+      label: <span className="items-center text-center justify-center justify-items-center line-through">Carport
+              <Badge variant="outline" className="mx-2 no-underline">
+                <span className="size-1.5 rounded-full bg-amber-500" aria-hidden="true"></span>
+                WIP
+              </Badge>
+            </span>,
+        action: () => console.log("WIP"),
+        disabled: true,
+      },
+  ]
+ 
   return (
-    <>
+    <FloatingPanelRoot>
+      <FloatingPanelTrigger
+        title="New +"
+        className="flex justify-self-end items-center space-x-2 px-4 py-2 bg-accent text-accent-foreground rounded-md hover:bg-accent/90 transition-colors"
+      >
+        <span>New +</span>
+      </FloatingPanelTrigger>
+      <FloatingPanelContent className="w-56">
+        <FloatingPanelBody>
+          <AnimatePresence>
+            {actions.map((action, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <FloatingPanelButton
+                  disabled={action.disabled}
+                  onClick={action.action}
+                  className="w-full flex items-center space-x-2 px-2 py-1 rounded-md hover:bg-muted transition-colors"
+                >
+                  {action.icon}
+                  <span>{action.label}</span>
+                </FloatingPanelButton>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </FloatingPanelBody>
+        <FloatingPanelFooter>
+          <FloatingPanelCloseButton />
+        </FloatingPanelFooter>
+      </FloatingPanelContent>
+    </FloatingPanelRoot>
+  )
+}
 
-    </>
-  );
-};
-
+export default App;
 
