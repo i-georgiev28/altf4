@@ -6,60 +6,42 @@ export function Solutions() {
       <HoverEffect items={projects} />
     </div>
   );
-}
+} 
 export const projects = [
   {
-    title: "Stripe",
+    title: "Residential Monitoring",
     description:
-      "A technology company that builds economic infrastructure for the internet.",
-    link: "https://stripe.com",
+      "Tailored solar tracking solutions that allow homeowners to monitor energy production, optimize usage, and reduce costs with real-time insights.",
+    link: "",
   },
   {
-    title: "Netflix",
+    title: "Comercial Rooftop Systems",
     description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
-    link: "https://netflix.com",
+      "Advanced monitoring for businesses, ensuring efficient solar energy management, cost savings, and optimal system performance for rooftop installations.",
+    link: "",
   },
   {
-    title: "Google",
+    title: "Corporate Solar Farms",
     description:
-      "A multinational technology company that specializes in Internet-related services and products.",
-    link: "https://google.com",
+      "Scalable solutions for managing large solar farms, providing real-time tracking, predictive maintenance, and performance optimization.",
+    link: "",
   },
   {
-    title: "Meta",
+    title: "Industrial installations",
     description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
+      "Robust monitoring systems designed for industrial-scale solar energy setups, ensuring efficiency, reliability, and maximum energy output.",
+    link: "",
   },
   {
-    title: "Amazon",
+    title: "Off-Grid Solutions",
     description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
+      "Innovative tracking for remote and off-grid solar applications, ensuring energy reliability in areas without traditional power access.",
+    link: "",
   },
   {
-    title: "Microsoft",
+    title: "Community Solar Projects",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-    link: "https://microsoft.com",
-  },
-  {
-    title: "Stripe",
-    description:
-      "A technology company that builds economic infrastructure for the internet.",
-    link: "https://stripe.com",
-  },
-  {
-    title: "Stripe",
-    description:
-      "A technology company that builds economic infrastructure for the internet.",
-    link: "https://stripe.com",
-  },
-  {
-    title: "Stripe",
-    description:
-      "A technology company that builds economic infrastructure for the internet.",
-    link: "https://stripe.com",
+      "Empowering communities with shared solar management, enabling efficient energy distribution and cost-effective sustainable power solutions.",
+    link: "",
   },
 ];

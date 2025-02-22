@@ -27,7 +27,7 @@ const items = [
   {
     title: "Real time dashbord",
     description: "With aur app you can monitir all of yor solar panels and track their specs.",
-    header: <img src="/public/section1 (2).webp" />,
+    header: <img src="/public/" />,
     className: "md:col-span-2",
   },
   {
