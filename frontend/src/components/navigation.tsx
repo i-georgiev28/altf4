@@ -28,7 +28,10 @@ import Logo from "@/assets/logo";
 import { useAuth } from "@/provider/authProvider";
 
 function Navigation() {
-  const { token } = useAuth();
+  const {token, setToken } = useAuth();
+  const handleClick = () => {
+    setToken(null);
+  };
 
   return (
     <header className="sticky top-0 z-50 -mb-4 px-4 pb-4">
@@ -53,9 +56,12 @@ function Navigation() {
             </SignUp>
               </>
             ) : (
+              <>
+              <Button variant="outline" onClick={handleClick}>logout</Button>
               <a href="/fields">
                 <Button variant="default">Dashboard</Button>
               </a>
+              </>
             )}
             <Sheet>
               <SheetTrigger asChild>

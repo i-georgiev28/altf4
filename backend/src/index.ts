@@ -13,8 +13,14 @@ import * as process from 'process';
 const app = express();
 const port = 8080;
 
+let corsOptions = {
+    origin : ['http://localhost:5173'],
+ }
+ 
+ 
+
 app.use(express.json() as any);
-app.use(cors()); // You may want to restrict this to only the domains you trust in a production app
+app.use(cors({credentials: true, origin: 'http://localhost:5173'})); // You may want to restrict this to only the domains you trust in a production app
 
 const api = Router();
 
