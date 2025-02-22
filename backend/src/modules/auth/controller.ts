@@ -35,9 +35,7 @@ export class AuthController {
 
     static async login(req: Request, res: Response, next: NextFunction) {
         const user = req.user!;
-
         const { accessToken, refreshToken } = await AuthService.generateAuthTokens(user);
-
         const response = {
             user,
             accessToken,

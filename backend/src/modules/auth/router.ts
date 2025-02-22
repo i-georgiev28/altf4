@@ -7,7 +7,7 @@ import { userLoginRequestSchema, userRegistrationRequestSchema } from './request
 const app = Router();
 
 app.post('/register', validateRequest(userRegistrationRequestSchema), AuthController.register);
-app.post('/login', [validateRequest(userLoginRequestSchema), authMiddlewares['local']], AuthController.login);
+app.post('/login', [validateRequest(userLoginRequestSchema), authMiddlewares.local], AuthController.login);
 app.get('/me', authenticate, AuthController.me);
 app.post('/refresh', authMiddlewares['jwt-refresh'], AuthController.refresh);
 app.post('/logout', authMiddlewares['jwt-refresh'], AuthController.logout);

@@ -4,19 +4,14 @@ import { User } from '../modules/users';
 
 
 const passportCallback = (req: Request, res: Response, next: NextFunction, unauthorizedMessage = 'Unauthorized') => (err: Error, user: User | null) => {
-    // If an error was returned by the strategy, send it to the client
+    
     if (err) {
-        // return res.status(500).json({ message: err.message });
         return res.status(500).json({ message: 'Internal server error' });
     }
 
-    // If the user was not found, send an error to the client
     if (!user) {
         return res.status(401).json({ message: unauthorizedMessage });
     }
-
-    // Manually setting the logged-in user to req.user
-    // Optionally, you can set it to "req.session" if you're using some sort of session
     req.user = user;
 
     // Invoking "next" to continue to the controller
@@ -32,7 +27,6 @@ const local = (req: Request, res: Response, next: NextFunction) => {
     }
 
     const unauthorizedMessage = 'Incorrect email or password';
-
     passport.authenticate('local', passportCallback(req, res, next, unauthorizedMessage))(req, res, next);
 };
 
