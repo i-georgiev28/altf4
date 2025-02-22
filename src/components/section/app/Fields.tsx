@@ -188,7 +188,7 @@ const columns: ColumnDef<Item>[] = [
     return (
       <div className="space-y-6 bg-background">
         {/* Filters */}
-        <div className="flex flex-wrap gap-3 md:max-w-full sm:self-center sm:justify-self-center flex-1 sm:max-w-[50%]">
+        <div className="flex flex-wrap gap-3 flex-1 ">
           {/* Search input */}
           <div className="w-44">
             <Filter column={table.getColumn("name")!} />
