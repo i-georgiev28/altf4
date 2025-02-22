@@ -5,7 +5,6 @@ import { AboutUs } from "@/components/aboutUsSection";
 import { Footer } from "@/components/footerSection";
 import { Features } from "@/components/featuresSection";
 import { Solutions } from "@/components/solutionsSection";
-
 function Index() {
     return (
         <>

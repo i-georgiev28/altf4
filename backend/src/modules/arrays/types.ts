@@ -3,9 +3,16 @@ export interface ArrayDb {
     userId: number;
 
     name: string;
+    
+    width: number;
+    height: number;
+
     location: string;
-    output: number;
+    latitude: number;
+    longitude: number;
+
     capacity: number;
+
     data: string;
 }
 

@@ -1,5 +1,5 @@
 import * as z from 'zod';
-import { dataValidation, locationValidation, nameValidation } from './field-validations';
+import { dataValidation, latitudeValidation, longitudeValidation, locationValidation, nameValidation, heightValidation, widthValidation, capacityValidation } from './field-validations';
 import { idValidation } from '../../utils';
 
 export const arrayIndexRequestSchema = z.strictObject({
@@ -19,6 +19,11 @@ export const arrayCreationRequestSchema = z.strictObject({
     body: z.strictObject({
         name: nameValidation,
         location: locationValidation,
+        latitude: latitudeValidation,
+        longitude: longitudeValidation,
+        width: widthValidation,
+        height: heightValidation,
+        capacity: capacityValidation,
     }),
 });
 
@@ -29,6 +34,11 @@ export const arrayUpdateRequestSchema = z.strictObject({
     body: z.strictObject({
         name: nameValidation.optional(),
         location: locationValidation.optional(),
+        latitude: z.number().optional(),
+        longitude: z.number().optional(),
+        width: z.number().optional(),
+        height: z.number().optional(),
+        capacity: z.number().optional(),
         data: dataValidation.optional(),
     }),
 });

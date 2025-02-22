@@ -167,8 +167,8 @@ export function FloatingPanelContent({
         closeFloatingPanel()
       }
     }
-    document.addEventListener("mousedown", handleClickOutside)
-    return () => document.removeEventListener("mousedown", handleClickOutside)
+    // document.addEventListener("mousedown", handleClickOutside)
+    // return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [closeFloatingPanel])
  
   useEffect(() => {
@@ -190,7 +190,7 @@ export function FloatingPanelContent({
         <>
           <motion.div
             initial={{ backdropFilter: "blur(0px)" }}
-            animate={{ backdropFilter: "blur(4px)" }}
+            // animate={{ backdropFilter: "blur(4px)" }}
             exit={{ backdropFilter: "blur(0px)" }}
             className="fixed inset-0 z-40"
           />
@@ -456,11 +456,10 @@ export function FloatingPanelButton({
   return (
     <motion.button
       className={cn(
-        "flex w-full items-center gap-2 rounded-md px-4 py-2 text-left text-sm hover:bg-zinc-100",
+        "flex w-full items-center gap-2 rounded-md px-4 py-2 text-left text-sm",
         className
       )}
       onClick={onClick}
-      whileHover={disabled ? {backgroundColor: "rgba(0,0,0,0);"} : { backgroundColor: "rgba(0, 0, 0, 0.05)" }}
       // whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
       disabled={disabled}
       whileTap={{ scale: 0.98 }}
