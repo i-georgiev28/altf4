@@ -1,7 +1,7 @@
 import { Hero } from "@/components/heroSection";
 import { Navigation } from "@/components/navigation";
 import { Contact } from "@/components/contactSection";
-import { Features } from "@/components/featureSection";
+import { AboutUs } from "@/components/aboutUsSection";
 import { Footer } from "@/components/footerSection";
 
 function Index() {
@@ -9,7 +9,7 @@ function Index() {
         <>
             <Navigation />
             <Hero />
-            <Features />
+            <AboutUs />
             <Contact />
             <Footer />
         </>
