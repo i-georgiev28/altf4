@@ -5,6 +5,7 @@
 import { Hero } from '@/components/section/landing/Hero';
 import { Navigation } from '@/components/section/landing/Navigation';
 
+
 function Landing() {
   return (
     <>

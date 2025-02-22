@@ -1,5 +1,9 @@
 "use client";
 
+import SignIn from "@/components/section/landing/SignIn";
+import SignUp from "@/components/section/landing/SignUp";
+// import { LogIn } from "@/components/section/app/LogIn";
+
 import {
   NavBar as NavBarComponent,
   NavBarLeft,
@@ -11,9 +15,7 @@ import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/nav/Sheet";
 import { Menu } from "lucide-react";
 import Logo from "@/assets/Logo";
 
-import {MenuBar} from '@/components/section/landing/MenuBar';
-
-
+import { MenuBar } from "@/components/section/landing/MenuBar";
 
 function Navigation() {
   return (
@@ -23,37 +25,53 @@ function Navigation() {
         <NavBarComponent>
           <NavBarLeft>
             <a href="/" className="flex items-center gap-2 text-xl font-bold">
-              <Logo />
-              Launch UI
+              <Logo className="w-8 h-8" />
+              SunSight
             </a>
             <MenuBar />
           </NavBarLeft>
           <NavBarRight>
-            <a href="pages/LogIn.tsx" className="hidden text-sm md:block">
-              Sign in
-            </a>
-            <Button variant="default" asChild>
-              <a href="SingUp">Get Started</a>
-            </Button>
+            <SignIn>
+              <Button variant="outline">Sign in</Button>
+            </SignIn>
+            <SignUp>
+              <Button variant="default">Sign up</Button>
+            </SignUp>
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="shrink-0 md:hidden">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="shrink-0 md:hidden"
+                >
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right">
+              <SheetContent className="bg-white" side="right">
                 <nav className="grid gap-6 text-lg font-medium">
-                  <a href="/" className="flex items-center gap-2 text-xl font-bold">
-                    <span>Launch UI</span>
+                  <a
+                    href="/"
+                    className="flex items-center gap-2 text-xl font-bold"
+                  >
+                    <span>SunSight</span>
                   </a>
-                  <a href="/" className="text-muted-foreground hover:text-foreground">
+                  <a
+                    href="/"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Getting Started
                   </a>
-                  <a href="/" className="text-muted-foreground hover:text-foreground">
+                  <a
+                    href="/"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Components
                   </a>
-                  <a href="/" className="text-muted-foreground hover:text-foreground">
+                  <a
+                    href="/"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Documentation
                   </a>
                 </nav>
