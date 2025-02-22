@@ -5,11 +5,13 @@
 import { Hero } from '@/components/section/landing/Hero';
 import { Navigation } from '@/components/section/landing/Navigation';
 
+import {Footer} from '@/components/section/landing/Footer';
 function Landing() {
   return (
     <>
     <Navigation />
     <Hero />
+    <Footer />
     </>
   );
 }
