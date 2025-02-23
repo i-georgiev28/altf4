@@ -77,7 +77,7 @@ function Navigation() {
               <SheetContent className="bg-white" side="right">
                 <nav className="grid gap-6 text-lg font-medium">
                   <button className="flex items-center gap-2 text-xl font-bold">
-                    <span>SunSight</span>
+                    <span>SolarEye</span>
                   </button>
                   <button className="text-muted-foreground hover:text-foreground">
                     Getting Started

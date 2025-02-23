@@ -83,7 +83,7 @@ const SignUp = ({children, ...props}: AuthDialogProps)  => {
               </svg>
             </div>
             <DialogHeader>
-              <DialogTitle className="sm:text-center">Sign up SunSight</DialogTitle>
+              <DialogTitle className="sm:text-center">Sign up SolarEye</DialogTitle>
               <DialogDescription className="sm:text-center">
                 We just need a few details to get you started.
               </DialogDescription>
