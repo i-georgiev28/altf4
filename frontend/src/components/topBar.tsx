@@ -13,6 +13,8 @@ import {
   Ellipsis,
   PanelRightOpen,
   PanelLeftOpen,
+  DoorOpen,
+  User,
 } from "lucide-react";
 import {
   Breadcrumb as BreadcrumbComponent,
@@ -123,7 +125,7 @@ const ProfilePopOver = ({ username }: ProfilePopoverProps) => {
   const { setToken } = useAuth();
   const actions = [
     {
-      icon: <Ellipsis className="w-4 h-4" />,
+      icon: <User className="w-4 h-4" />,
       label: "Profile",
       action: () => navigate('/profile', {replace: true}),
     },
@@ -133,8 +135,8 @@ const ProfilePopOver = ({ username }: ProfilePopoverProps) => {
       action: () => navigate('/profile', {replace: true}),
     },
     {
-      icon: <Ellipsis className="w-4 h-4" />,
-      label: "Edit Colors",
+      icon: <DoorOpen className="w-4 h-4" />,
+      label: "Log Out",
       action: () => {
         setToken(null);
         navigate('/', {replace: true});
