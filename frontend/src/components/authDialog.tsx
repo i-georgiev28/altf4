@@ -55,7 +55,7 @@ const SignUp = ({children, ...props}: AuthDialogProps)  => {
         navigate('/arrays');
       } catch (error) {
         console.error('Login failed:', error);
-        navigate('/', { replace: true});
+        navigate(0);
       }
 
     };
@@ -155,7 +155,7 @@ const SignUp = ({children, ...props}: AuthDialogProps)  => {
         // navigate('/dashboard');
       } catch (error) {
         console.error('Login failed:', error);
-        navigate('/', { replace: true});
+        navigate(0);
       }
 
     };

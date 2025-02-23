@@ -1,10 +1,12 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-// import Link, { LinkProps } from "next/link";
-import React, { useState, createContext, useContext, AnchorHTMLAttributes } from "react";
+import { NavLink as Link } from "react-router";
+import React, { useState, createContext, useContext } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
+
+
 
 interface Links {
   label: string;
@@ -89,17 +91,18 @@ export const DesktopSidebar = ({
   return (
     <motion.div
       className={cn(
-        "h-full px-4 py-4 hidden md:flex md:flex-col bg-neutral-100 w-[300px] flex-shrink-0",
+        "h-[90%] my-10 rounded-md px-4 py-4 hidden md:flex md:flex-col bg-neutral-100 w-[300px] flex-shrink-0",
         className
       )}
       animate={{
-        width: animate ? (open ? "300px" : "60px") : "300px",
+        width: animate ? (open ? "200px" : "60px") : "200px",
       }}
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
       {...props}
     >
-      {children}
+      
+        {children}  
     </motion.div>
   );
 };
@@ -120,7 +123,7 @@ export const MobileSidebar = ({
       >
         <div className="flex justify-end z-20 w-full">
           <Menu
-            className="text-neutral-800 cursor-pointer"
+            className="cursor-pointer"
             onClick={() => setOpen(!open)}
           />
         </div>
@@ -135,7 +138,7 @@ export const MobileSidebar = ({
                 ease: "easeInOut",
               }}
               className={cn(
-                "fixed h-full w-full inset-0 bg-white p-10 z-[100] flex flex-col justify-between",
+                "fixed h-full !m-0 w-full inset-0 bg-white p-10 z-[100] flex flex-col justify-between",
                 className
               )}
             >
@@ -161,12 +164,11 @@ export const SidebarLink = ({
 }: {
   link: Links;
   className?: string;
-  props?: AnchorHTMLAttributes<HTMLAnchorElement>;
 }) => {
   const { open, animate } = useSidebar();
   return (
-    <a
-      href={link.href}
+    <Link
+      to={link.href}
       className={cn(
         "flex items-center justify-start gap-2 group/sidebar py-2",
         className
@@ -183,6 +185,6 @@ export const SidebarLink = ({
       >
         {link.label}
       </motion.span>
-    </a>
+    </Link>
   );
 };

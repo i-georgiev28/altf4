@@ -151,7 +151,7 @@ const columns: ColumnDef<Item>[] = [
     accessorKey: "action",
     cell: ({ row }) => (
       <div className="flex items-start justify-start overflow-hidden">
-        <DestructiveButton />
+        <DestructiveButton id={row.getValue("id")} />
       </div>
       // <a
       //   className="inline-flex items-center gap-1 hover:underline"
@@ -183,7 +183,7 @@ function ArraysTable() {
         }));
         setItems(transformedItems);
       } catch (err) {
-        navigate("/arrays", { replace: true });
+        navigate(0);
       }
     }
     fetchArrays();
@@ -455,12 +455,28 @@ export { ArraysTable };
 
 function DestructiveButton({
   className,
-  href,
+  id,
   ...props
-}: React.ComponentProps<"a">) {
-  var to = href === undefined ? "#" : href;
+}: React.ComponentProps<"button"> & { id: string }) {
+  const navigate = useNavigate();
+
+  const handleDelete = async () => {
+    try {
+      await api.delete(`/arrays/${id}`);
+      // Optionally refresh the page or update the table
+      navigate(0); // This refreshes the current page
+    } catch (error) {
+      console.error('Failed to delete array:', error);
+      navigate(0); // This refreshes the current page
+    }
+  };
+
   return (
-    <button className={cn("delete-button group", className)}>
+    <button 
+      className={cn("delete-button group", className)}
+      onClick={handleDelete}
+      type="button"
+    >
       <svg viewBox="0 0 448 512">
         <path
           className="fill-red-500 group-hover:fill-white"
