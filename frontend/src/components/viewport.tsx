@@ -412,6 +412,7 @@ const IsometricScene: React.FC<IsometricSceneProps> = ({
       className="w-full h-full"
       style={{ background: "rgba(255, 255, 255, 0)" }}
     >
+      <OrthographicCamera makeDefault position={[10, 15, 10]} zoom={60} />
       <OrbitControls
         enableRotate={false}
         enableZoom={false}
