@@ -20,12 +20,10 @@ interface AuthProviderProps {
 }
 
 const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-  // State to hold the authentication token
   const [token, setToken_] = useState<string | null>(
     localStorage.getItem("token")
   );
 
-  // Function to set the authentication token
   const setToken = (newToken: string | null) => {
     setToken_(newToken);
   };
@@ -40,7 +38,6 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   }, [token]);
 
-  // Memoized value of the authentication context
   const contextValue = useMemo(
     () => ({
       token,
@@ -62,4 +59,4 @@ const useAuth = (): AuthContextType => {
   return context;
 };
 
-export {AuthProvider, useAuth};
+export { AuthProvider, useAuth };

@@ -40,7 +40,6 @@ import { NavLink as Link, useNavigate } from "react-router";
 import api from "@/lib/api";
 
 declare module "@tanstack/react-table" {
-  //allows us to define custom properties for our columns
   interface ColumnMeta<TData extends RowData, TValue> {
     filterVariant?: "text" | "range" | "select";
   }
@@ -53,7 +52,6 @@ type Item = {
   output: number;
   capacity: number;
   area: number;
-  // actions: string;
 };
 
 const columns: ColumnDef<Item>[] = [
@@ -143,7 +141,7 @@ const columns: ColumnDef<Item>[] = [
       return <div>{row.getValue("area")} m²</div>;
     },
     meta: {
-      filterVariant: "text",
+      filterVariant: "range",
     },
   },
   {
@@ -153,13 +151,6 @@ const columns: ColumnDef<Item>[] = [
       <div className="flex items-start justify-start overflow-hidden">
         <DestructiveButton id={row.getValue("id")} />
       </div>
-      // <a
-      //   className="inline-flex items-center gap-1 hover:underline"
-      //   href={row.getValue("action")}
-      //   target="_blank"
-      // >
-      //   {row.getValue("link")} <ExternalLink size={12} strokeWidth={2} aria-hidden="true" />
-      // </a>
     ),
     enableSorting: false,
   },
@@ -168,26 +159,41 @@ const columns: ColumnDef<Item>[] = [
 function ArraysTable() {
   const [items, setItems] = useState<Item[]>([]);
   const navigate = useNavigate();
-
   useEffect(() => {
     async function fetchArrays() {
       try {
         const res = await api.get("/arrays");
-        const transformedItems: Item[] = res.data.map((item: any) => ({
-          id: item.id || '',
-          name: item.name || '',
-          status: ['Operational'],
-          output: 0,
-          area: item.width * item.height,
-          capacity: item.capacity || 0,
-        }));
+
+        const transformedItems: Item[] = res.data.map((item: any) => {
+          const panels = item.data ? JSON.parse(item.data) : [];
+
+          const status = panels.some((panel: any) => panel.peak < 200)
+            ? ["Operational", "Warning"]
+            : ["Operational"];
+
+          const totalPeakOutput = panels.reduce((sum: number, panel: any) => {
+            const fluctuation = (Math.random() * 0.1 - 0.05) * panel.peak;
+            return sum + Math.max(0, panel.peak + fluctuation);
+          }, 0);
+
+          return {
+            id: item.id || "",
+            name: item.name || "",
+            status,
+            output: totalPeakOutput,
+            area: item.width * item.height,
+            capacity: item.capacity || 0,
+          };
+        });
+
         setItems(transformedItems);
       } catch (err) {
-        navigate(0);
+        console.error("Failed to fetch arrays:", err);
       }
     }
+
     fetchArrays();
-  }, [navigate]);
+  }, []);
 
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [sorting, setSorting] = useState<SortingState>([
@@ -206,11 +212,11 @@ function ArraysTable() {
     },
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
-    getFilteredRowModel: getFilteredRowModel(), //client-side filtering
+    getFilteredRowModel: getFilteredRowModel(),
     getSortedRowModel: getSortedRowModel(),
-    getFacetedRowModel: getFacetedRowModel(), // client-side faceting
-    getFacetedUniqueValues: getFacetedUniqueValues(), // generate unique values for select filter/autocomplete
-    getFacetedMinMaxValues: getFacetedMinMaxValues(), // generate min/max values for range filter
+    getFacetedRowModel: getFacetedRowModel(),
+    getFacetedUniqueValues: getFacetedUniqueValues(),
+    getFacetedMinMaxValues: getFacetedMinMaxValues(),
     onSortingChange: setSorting,
     enableSortingRemoval: false,
   });
@@ -266,7 +272,6 @@ function ArraysTable() {
                         )}
                         onClick={header.column.getToggleSortingHandler()}
                         onKeyDown={(e) => {
-                          // Enhanced keyboard handling for sorting
                           if (
                             header.column.getCanSort() &&
                             (e.key === "Enter" || e.key === " ")
@@ -350,10 +355,8 @@ function Filter({ column }: { column: Column<any, unknown> }) {
   const sortedUniqueValues = useMemo(() => {
     if (filterVariant === "range") return [];
 
-    // Get all unique values from the column
     const values = Array.from(column.getFacetedUniqueValues().keys());
 
-    // If the values are arrays, flatten them and get unique items
     const flattenedValues = values.reduce((acc: string[], curr) => {
       if (Array.isArray(curr)) {
         return [...acc, ...curr];
@@ -361,7 +364,6 @@ function Filter({ column }: { column: Column<any, unknown> }) {
       return [...acc, curr];
     }, []);
 
-    // Get unique values and sort them
     return Array.from(new Set(flattenedValues)).sort();
   }, [column.getFacetedUniqueValues(), filterVariant]);
 
@@ -451,8 +453,6 @@ function Filter({ column }: { column: Column<any, unknown> }) {
 
 export { ArraysTable };
 
-//   Funny button
-
 function DestructiveButton({
   className,
   id,
@@ -463,16 +463,16 @@ function DestructiveButton({
   const handleDelete = async () => {
     try {
       await api.delete(`/arrays/${id}`);
-      // Optionally refresh the page or update the table
-      navigate(0); // This refreshes the current page
+
+      navigate(0);
     } catch (error) {
-      console.error('Failed to delete array:', error);
-      navigate(0); // This refreshes the current page
+      console.error("Failed to delete array:", error);
+      navigate(0);
     }
   };
 
   return (
-    <button 
+    <button
       className={cn("delete-button group", className)}
       onClick={handleDelete}
       type="button"

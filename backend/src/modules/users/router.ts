@@ -8,8 +8,8 @@ const app = Router();
 
 app.get('/', validateRequest(userIndexRequestSchema), UsersController.index);
 app.get('/:id', validateRequest(userShowRequestSchema), UsersController.show);
-// app.put('/:id', [validateRequest(userUpdateRequestSchema), authenticate], UsersController.update);
-// app.delete('/:id', [validateRequest(userDestroyRequestSchema), authenticate], UsersController.destroy);
+
+
 
 export {
     app as UserRouter,

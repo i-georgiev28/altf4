@@ -7,7 +7,7 @@ const longitude = z.number();
 const width = z.number();
 const height = z.number();
 const capacity = z.number().optional();
-const data = z.string().min(0).max(2048);
+const data = z.string().min(0);
 
 export {
     name as nameValidation,

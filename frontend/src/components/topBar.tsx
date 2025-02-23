@@ -63,14 +63,10 @@ function Breadcrumb() {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href="#" className="inline-flex items-center gap-1.5">
+          <BreadcrumbPage className="inline-flex items-center gap-1.5">
             <ComponentIcon size={16} aria-hidden="true" />
             My Arrays
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbPage className="">Razgrad</BreadcrumbPage>
+          </BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </BreadcrumbComponent>
@@ -111,6 +107,7 @@ const TopBar = () => {
         </NavbarLeft>
         <NavbarRight className="flex">
           <ProfilePopOver username={username} />
+          
         </NavbarRight>
       </NavbarComponent>
     </header>

@@ -46,6 +46,9 @@ module.exports = {
           md: `calc(var(--radius) - 2px)`,
           sm: "calc(var(--radius) - 4px)",
         },
+        backgroundImage: {
+          'radial-gradient': 'radial-gradient(circle, var(--tw-gradient-from) 0%, var(--tw-gradient-to) 70%)',
+        },
       },
     },
     plugins: [require("tailwindcss-animate"), heroui()],
